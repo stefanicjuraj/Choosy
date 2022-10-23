@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #481D73;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Pane layoutX="317.0" prefHeight="400.0" prefWidth="283.0" style="-fx-background-color: black;" />
+      <TextField fx:id="tfUsername" layoutX="76.0" layoutY="152.0" prefHeight="25.0" prefWidth="178.0" promptText="username" text="klongin" />
+      <Button fx:id="btnLogin" layoutX="141.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleLogin" text="Log in" />
+      <Button fx:id="btnRegister" layoutX="429.0" layoutY="312.0" mnemonicParsing="false" onAction="#handleRegister" text="Register" />
+      <Label layoutX="103.0" layoutY="62.0" text="Log in" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="135.0" text="Username" textFill="WHITE" />
+      <Label layoutX="78.0" layoutY="191.0" text="Password" textFill="WHITE" />
+      <TextField fx:id="tfRegUsername" layoutX="370.0" layoutY="97.0" prefHeight="25.0" prefWidth="178.0" promptText="username" />
+      <TextField fx:id="tfRegPassword" layoutX="370.0" layoutY="152.0" prefHeight="25.0" prefWidth="178.0" promptText="password" />
+      <Label layoutX="370.0" layoutY="80.0" text="Username" textFill="WHITE" />
+      <Label layoutX="372.0" layoutY="135.0" text="Password" textFill="WHITE" />
+      <TextField fx:id="tfFname" layoutX="370.0" layoutY="208.0" prefHeight="25.0" prefWidth="178.0" promptText="First Name" />
+      <Label layoutX="372.0" layoutY="191.0" text="First Name" textFill="WHITE" />
+      <TextField fx:id="tfLname" layoutX="370.0" layoutY="268.0" prefHeight="25.0" prefWidth="178.0" promptText="First Name" />
+      <Label layoutX="372.0" layoutY="251.0" text="Last Name" textFill="WHITE" />
+      <PasswordField fx:id="pfPassword" layoutX="76.0" layoutY="208.0" prefHeight="25.0" prefWidth="178.0" promptText="password" text="klongin" />
+   </children>
+</Pane>

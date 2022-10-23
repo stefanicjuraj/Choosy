@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BrowseController">
+  <children>
+    <MenuBar prefHeight="25.0" prefWidth="1464.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="523.0" prefWidth="640.0" style="-fx-background-color: #4a4a4a;" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane prefHeight="787.0" prefWidth="215.0" style="-fx-background-color: #481D73;">
+               <children>
+                  <Label fx:id="lblFavorites" layoutX="37.0" layoutY="190.0" onMouseClicked="#handleFavorites" text="Favorites" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPlaylists" layoutX="37.0" layoutY="234.0" onMouseClicked="#handlePlaylists" prefHeight="25.0" prefWidth="65.0" text="Playlists" textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBrowse" layoutX="37.0" layoutY="133.0" onMouseClicked="#handleBrowse" prefHeight="36.0" prefWidth="69.0" text="Browse" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="58.0" prefHeight="58.0" prefWidth="202.0" text="Choosy..." textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPromote" layoutX="37.0" layoutY="275.0" onMouseClicked="#handlePromote" prefHeight="36.0" prefWidth="65.0" text="Promote" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ListView fx:id="lvSongs" editable="true" layoutX="215.0" layoutY="85.0" prefHeight="701.0" prefWidth="1123.0" style="-fx-font-family: monospace;" />
+            <Label fx:id="lblCurrentSong" layoutX="226.0" layoutY="14.0" text="Current Song" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCurrentArtist" layoutX="226.0" layoutY="44.0" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnFavorites" layoutX="1279.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleAddToFavorites" style="-fx-background-color: #481D73;" text="♥" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPlaylist" layoutX="1149.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleAddToPlaylist" style="-fx-background-color: #481D73;" text="Add to playlist" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRemoveFavorite" layoutX="1229.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleRemoveFromFavorites" style="-fx-background-color: #481D73;" text="Remove" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAddSong" layoutX="931.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleAddSong" style="-fx-background-color: #481D73;" text="Add Song" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRemoveSong" layoutX="1028.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleRemoveSong" style="-fx-background-color: #481D73;" text="Remove Song" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnNewPlaylist" layoutX="1074.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleNewPlaylist" style="-fx-background-color: #481D73;" text="New Playlist" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRemovePlaylist" layoutX="1186.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleRemovePlaylist" style="-fx-background-color: #481D73;" text="Remove Playlist" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
